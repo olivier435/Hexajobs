@@ -5,7 +5,7 @@ $currentPath = rtrim($currentPath, '/') ?: '/';
 $isHome = ($currentPath === '/');
 $bodyClass = $isHome ? 'is-home' : 'is-page';
 
-$pageTitle = $pageTitle ?? 'Hexajobs';
+$pageTitle = $pageTitle ?? $title ?? 'Hexajobs';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -24,8 +24,7 @@ $pageTitle = $pageTitle ?? 'Hexajobs';
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <!-- CSS app (si tu as un fichier) -->
-    <!-- <link href="/assets/css/app.css" rel="stylesheet"> -->
-</head>
+    <link href="/assets/css/app.css" rel="stylesheet">
 
 <body class="<?= htmlspecialchars($bodyClass) ?>">
     <?php require VIEW_PATH . '/partials/_nav.php'; ?>

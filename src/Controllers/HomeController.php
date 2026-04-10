@@ -5,23 +5,28 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Models\OfferModel;
+use App\Models\CompanyModel;
 
 final class HomeController extends Controller
 {
-    private OfferModel $model;
+    private OfferModel $offerModel;
+    private CompanyModel $companyModel;
 
     public function __construct()
     {
-        $this->model = new OfferModel();
+        $this->offerModel = new OfferModel();
+        $this->companyModel = new CompanyModel();
     }
 
     public function index(): void
     {
-        $latestOffers = $this->model->findLatestActiveOffers();
+        $latestOffers = $this->offerModel->findLatestActiveOffers();
+        $topCompanies = $this->companyModel->findTopRecruitingCompanies(4);
 
         $this->render('home/index', [
             'title' => 'Accueil',
             'latestOffers' => $latestOffers,
+            'topCompanies' => $topCompanies,
         ]);
     }
 }
