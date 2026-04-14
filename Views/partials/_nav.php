@@ -15,16 +15,45 @@ use App\Core\Router;
                     <a class="nav-link <?= Router::isActiveRoute('/') ? 'active' : '' ?>" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= Router::isActiveRoute('/oofres') ? 'active' : '' ?>" href="/offres">Offres</a>
+                    <a class="nav-link <?= Router::isActiveRoute('/offres') ? 'active' : '' ?>" href="/offres">
+                        Offres
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= Router::isActiveRoute('/entreprises') ? 'active' : '' ?>" href="/entreprises">Entreprises</a>
+                    <a class="nav-link <?= Router::isActiveRoute('/entreprises') ? 'active' : '' ?>" href="/entreprises">
+                        Entreprises
+                    </a>
                 </li>
+            </ul>
+            <!-- Zone authentification -->
+            <ul class="navbar-nav ms-auto">
+                <?php if ($this->getUser()): ?>
+                    <li class="nav-item d-flex align-items-center me-3">
+                        <span class="navbar-text">
+                            Bonjour <?= htmlspecialchars($this->getUser()['firstname']) ?>
+                        </span>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <form method="post" action="/logout">
+                            <input type="hidden" name="_token" value="<?= \App\Core\Csrf::token('logout') ?>">
+                            <button class="btn btn-sm btn-outline-danger">
+                                Déconnexion
+                            </button>
+                        </form>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?= Router::isActiveRoute('/login') ? 'active' : '' ?>" href="/login">
+                            Connexion
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= Router::isActiveRoute('/register') ? 'active' : '' ?>" href="/register">
+                            Inscription
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
-</nav>
-</ul>
-</div>
-</div>
 </nav>
