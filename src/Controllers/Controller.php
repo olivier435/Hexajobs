@@ -145,12 +145,12 @@ abstract class Controller
     protected function requireRole(string $role): void
     {
         if (!$this->auth()->check()) {
+            $this->auth()->rememberTargetUrl($_SERVEr['REQUEST_URI'] ?? '/');
             $this->redirect('/login');
         }
 
         if (!$this->auth()->isGranted($role)) {
-            http_response_code(403);
-            echo 'Accès interdit';
+            $this->abort(403, 'Accès interdit');
             exit;
         }
     }
