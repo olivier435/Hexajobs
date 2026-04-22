@@ -72,6 +72,11 @@ final class AuthService
         return is_string($url) ? $url : $default;
     }
 
+    // public function hasExactRole(string $role): bool
+    // {
+    //     $user = $this->user();
+    //     return isset($user['role']) && $user['role'] === $role;
+    // }
     // public function enableRememberMe(User $user, UserModel $userModel): void
     // {
     //     $token = bin2hex(random_bytes(32));

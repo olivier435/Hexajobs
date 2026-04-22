@@ -53,6 +53,7 @@ define('APP_ENV',    env('APP_ENV', 'prod'));
 define('APP_SECRET', env('APP_SECRET', 'change-me'));
 define('APP_DEBUG',  (int) env('APP_DEBUG', '0') === 1);
 define('APP_URL',    env('APP_URL', 'http://localhost'));
+define('CONFIG_PATH', APP_ROOT . '/config');
 
 /**
  * DB
@@ -79,8 +80,8 @@ define('DB_DSN', sprintf(
 ));
 
 /**
-* Constante sur la vue
-*/
+ * Constante sur la vue
+ */
 define('VIEW_PATH', APP_ROOT . '/Views'); // ou /templates
 
 /**
