@@ -24,10 +24,12 @@
             <p class="mb-0" style="white-space: pre-line;">
                 <?= htmlspecialchars($company->getDescription(), ENT_QUOTES, 'UTF-8'); ?>
             </p>
+            <?php $companyUrl = $company->getUrl(); ?>
 
-            <?php if ($company->getUrl() !== ''): ?>
+            <?php if ($companyUrl !== null && $companyUrl !== ''): ?>
                 <div class="mt-4">
-                    <a href="<?= htmlspecialchars($company->getUrl(), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+                    <a href="<?= htmlspecialchars($company->getUrl(), ENT_QUOTES, 'UTF-8'); ?>
+                    " target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
                         Visiter le site web
                     </a>
                 </div>
