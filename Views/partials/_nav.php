@@ -61,6 +61,15 @@ use App\Core\Router;
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= Router::isActiveRoute('/login') ? 'active' : '' ?>" href="/login">
+                            Connexion
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= Router::isActiveRoute('/register') ? 'active' : '' ?>" href="/register">
+                            Inscription
+                        </a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item dropdown">

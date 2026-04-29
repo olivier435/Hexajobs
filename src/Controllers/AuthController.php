@@ -75,7 +75,7 @@ final class AuthController extends AbstractAuthController
     public function login(): void
     {
         $this->handleLogin(
-            requiredRole: null, //accepte USER + admin
+            requiredRole: null, // accepte USER + ADMIN
             view: 'auth/login',
             csrfTokenId: 'login',
             pageTitle: 'Connexion',

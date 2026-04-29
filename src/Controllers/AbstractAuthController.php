@@ -25,11 +25,11 @@ abstract class AbstractAuthController extends Controller
     }
 
     protected function handleLogin(
-        ?string $requiredRole,
-        string $view,
-        string $csrfTokenId,
-        string $pageTitle,
-        string $invalidAuthMessage,
+        ?string $requiredRole, 
+        string $view, 
+        string $csrfTokenId, 
+        string $pageTitle, 
+        string $invalidAuthMessage, 
         string $successMessage = 'Connexion réussie ✅',
         string $redirectIfAuthenticatedTo = '/'
     ): void {
@@ -90,10 +90,9 @@ abstract class AbstractAuthController extends Controller
         // ❌ erreurs d'authentification
         if (
             $user === null
-            || !$this->passwordService->verify($form['password'], $user->getPassword())
+            || !$this->passwordService->verify($form['password'], $user->getPassword()) 
             || ($requiredRole !== null && $user->getRole() !== $requiredRole)
         ) {
-
             // ❌ On enregistre la tentative échouée
             // $this->attemptModel->recordFailedAttempt($form['email'], $ip);
 

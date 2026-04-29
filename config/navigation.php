@@ -2,25 +2,25 @@
 
 return [
     [
-        'label' => 'accueil',
+        'label' => 'Accueil',
         'url' => '/',
         'icon' => 'bi-house',
-        'roles' => null //visible
+        'roles' => null, // visible pour tous
     ],
     [
-        'label' => 'offres',
+        'label' => 'Offres',
         'url' => '/offres',
         'icon' => 'bi-briefcase',
-        'roles' => null //visible
+        'roles' => null,
     ],
     [
         'label' => 'Entreprises',
         'url' => '/entreprises',
         'icon' => 'bi-buildings',
-        'roles' => null //visible
+        'roles' => null,
     ],
-    
-    //user
+
+    // USER
     [
         'label' => 'Mes candidatures',
         'url' => '/candidatures',
@@ -28,20 +28,19 @@ return [
         'roles' => ['ROLE_USER'],
     ],
 
-    //company
+    // COMPANY
     [
-        'label' => 'Espaces entreprise',
+        'label' => 'Espace entreprise',
         'url' => '/entreprise/offres',
         'icon' => 'bi-briefcase-fill',
         'roles' => ['ROLE_COMPANY'],
     ],
 
-    //admin
+    // ADMIN
     [
         'label' => 'Dashboard',
         'url' => '/admin',
         'icon' => 'bi-speedometer2',
         'roles' => ['ROLE_ADMIN'],
     ],
-
 ];

@@ -105,10 +105,10 @@ final class CompanyAuthController extends AbstractAuthController
     {
         $this->handleLogin(
             requiredRole: 'ROLE_COMPANY',
-            view: 'company_auth/login',
-            csrfTokenId: 'company_login',
-            pageTitle: 'Connexion entreprise',
-            invalidAuthMessage: 'Identifiants invalides pour un compte entreprise.',
+            view: 'company_auth/login', 
+            csrfTokenId: 'company_login', 
+            pageTitle: 'Connexion entreprise', 
+            invalidAuthMessage: 'Identifiants invalides pour un compte entreprise.', 
             successMessage: 'Connexion entreprise réussie ✅'
         );
     }
